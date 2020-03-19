@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>rateApp.demo</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+    <table border="1">
+        <tr>
+            <th>No</th>
+            <th>ccy</th>
+            <th>base_ccy</th>
+            <th>buy</th>
+            <th>sale</th>
+        </tr>
+
+        <tr th:each="rate, state : ${rates}"
+            class="row" th:classappend="${state.odd} ? 'odd-row' : 'even-row'">
+
+            <td th:utext="${state.count}">No</td>
+            <td th:utext="${rate.ccy}">ccy</td>
+            <td th:utext="${rate.base_ccy}">base_ccy</td>
+            <td th:utext="${rate.buy}">buy</td>
+            <td th:utext="${rate.sale}">sale</td>
+
+        </tr>
+
+    </table>
+
+
+    </body>
+</html>
